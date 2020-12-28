@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 
+
 import com.example.testapp.network.TestResponse;
 import com.example.testapp.viewModel.TestViewModel;
 import com.github.mikephil.charting.charts.LineChart;
@@ -119,37 +120,39 @@ public class MainActivity extends AppCompatActivity {
                     initColor(response);
 
                     ///////////
-                    list.add(response);
 
-                    float i = 0;
-                    for (TestResponse testResponse : list) {
-                        if (list.size() > 0) {
-                            i += 5;
-                            entries_RSRP.add(new Entry(i, (float) testResponse.getRSRP()));
-                            entries_RSRQ.add(new Entry(i, (float) testResponse.getRSRQ()));
-                            entries_SINR.add(new Entry(i, (float) testResponse.getSINR()));
+                        list.add(response);
 
+                        float i = 0;
+                        for (TestResponse testResponse : list) {
+                            if (list.size() > 0) {
+                                i += 5;
+                                entries_RSRP.add(new Entry(i, (float) testResponse.getRSRP()));
+                                entries_RSRQ.add(new Entry(i, (float) testResponse.getRSRQ()));
+                                entries_SINR.add(new Entry(i, (float) testResponse.getSINR()));
+
+                            }
                         }
-                    }
-                    for (TestResponse testResponse : list) {
-                        if (list.size() > 0) {
-                            i += 5;
-                            entries_RSRP_s1.add(new Entry(i, (float) testResponse.getRSRP()));
-                            entries_RSRQ_s1.add(new Entry(i, (float) testResponse.getRSRQ()));
-                            entries_SINR_s1.add(new Entry(i, (float) testResponse.getSINR()));
+                        for (TestResponse testResponse : list) {
+                            if (list.size() > 0) {
+                                i += 5;
+                                entries_RSRP_s1.add(new Entry(i, (float) testResponse.getRSRP()));
+                                entries_RSRQ_s1.add(new Entry(i, (float) testResponse.getRSRQ()));
+                                entries_SINR_s1.add(new Entry(i, (float) testResponse.getSINR()));
+                            }
                         }
-                    }
-                    for (TestResponse testResponse : list) {
-                        if (list.size() > 0) {
-                            i += 5;
-                            entries_RSRP_s2.add(new Entry(i, (float) testResponse.getRSRP()));
-                            entries_RSRQ_s2.add(new Entry(i, (float) testResponse.getRSRQ()));
-                            entries_SINR_s2.add(new Entry(i, (float) testResponse.getSINR()));
+                        for (TestResponse testResponse : list) {
+                            if (list.size() > 0) {
+                                i += 5;
+                                entries_RSRP_s2.add(new Entry(i, (float) testResponse.getRSRP()));
+                                entries_RSRQ_s2.add(new Entry(i, (float) testResponse.getRSRQ()));
+                                entries_SINR_s2.add(new Entry(i, (float) testResponse.getSINR()));
+                            }
                         }
-                    }
-                    methodSettingOne();
-                    methodSettingTwo();
-                    methodSettingThree();
+                        methodSettingOne();
+                        methodSettingTwo();
+                        methodSettingThree();
+
 
                     //////////////
 
@@ -159,54 +162,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-//    private void getDataChart() {
-//
-//        testViewModel.getLiveResponse().observe(this, new Observer<TestResponse>() {
-//            @Override
-//            public void onChanged(TestResponse response) {
-//
-//                if (response != null) {
-//                    //////////
-//                    list.add(response);
-//
-//                    float i = 0;
-//                    for (TestResponse testResponse : list) {
-//                        if (list.size() > 0) {
-//                            i += 5;
-//                            entries_RSRP.add(new Entry(i, (float) testResponse.getRSRP()));
-//                            entries_RSRQ.add(new Entry(i, (float) testResponse.getRSRQ()));
-//                            entries_SINR.add(new Entry(i, (float) testResponse.getSINR()));
-//
-//                        }
-//                    }
-//                    for (TestResponse testResponse : list) {
-//                        if (list.size() > 0) {
-//                            i += 5;
-//                            entries_RSRP_s1.add(new Entry(i, (float) testResponse.getRSRP()));
-//                            entries_RSRQ_s1.add(new Entry(i, (float) testResponse.getRSRQ()));
-//                            entries_SINR_s1.add(new Entry(i, (float) testResponse.getSINR()));
-//                        }
-//                    }
-//                    for (TestResponse testResponse : list) {
-//                        if (list.size() > 0) {
-//                            i += 5;
-//                            entries_RSRP_s2.add(new Entry(i, (float) testResponse.getRSRP()));
-//                            entries_RSRQ_s2.add(new Entry(i, (float) testResponse.getRSRQ()));
-//                            entries_SINR_s2.add(new Entry(i, (float) testResponse.getSINR()));
-//                        }
-//                    }
-//                    methodSettingOne();
-//                    methodSettingTwo();
-//                    methodSettingThree();
-//
-//
-//                    ////////////
-//                } else {
-//                    Log.d("Aly", "onChanged: response is null ");
-//                }
-//            }
-//        });
-//    }
+
 
     private Runnable runnable = new Runnable() {
         @Override
@@ -217,13 +173,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-//    private Runnable runnableChart = new Runnable() {
-//        @Override
-//        public void run() {
-//            getDataChart();
-//            handler.postDelayed(runnable, 10000);
-//        }
-//    };
+
 
     private void initBackgroundColor() {
         GradientDrawable gradientDrawable1 = (GradientDrawable) backgroundViewOne.getBackground();
